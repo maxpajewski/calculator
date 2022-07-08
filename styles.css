@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+    background: linear-gradient(0.25turn, #ff0000, 32%, #1f2937);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    border: 1px dotted black;
+    margin-top: 64px;
+}
+
+.one-buttons, .two-buttons, .three-buttons, .four-buttons, .five-buttons  {
+    display: flex;
+    align-items: center;
+}
+
+.one-width {
+    width: 50px;
+}
+
+.two-width {
+    width: 100px;
+}
+
+button {
+    border: 1px solid white;
+    opacity: 0.8;
+    height: 50px;
+}
+
+#display {
+    height: 75px;
+    background-color: black;
+    opacity: 0.75;
+    text-align: left;
+}
