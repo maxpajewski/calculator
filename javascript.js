@@ -70,7 +70,16 @@ function operate(num1, num2, operator) {
     } else if(operator === 'multiply') {
         result = parseFloat(num1) * parseFloat(num2);
     } else if(operator === 'divide') {
-        result = parseFloat(num1) / parseFloat(num2);
+        let secondNum = parseFloat(num2);
+        if(secondNum === '0') {
+            result = 'Cannot divide by 0';
+        } else {
+            result = round((parseFloat(num1) / parseFloat(num2)), 3);
+        }
     }
     return result;
+}
+function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
 }
