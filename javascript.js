@@ -3,6 +3,8 @@ const content = document.createElement('p');
 content.textContent = '0';
 displayResult.appendChild(content);
 
+let hasOperator = false;
+
 const calculator = document.querySelector('.calculator');
 const keys = calculator.querySelectorAll('button');
 keys.forEach((button) => {
@@ -13,6 +15,10 @@ keys.forEach((button) => {
         const keyContent = key.textContent;
         const displayedNum = content.textContent;
         const previousKeyType = calculator.dataset.previousKeyType;
+
+        const firstValue = calculator.dataset.firstValue;
+        const secondValue = displayedNum;
+        const operator = calculator.dataset.operator;
 
         if (!action) {
             if(displayedNum === '0' || previousKeyType === 'operator') {
@@ -32,16 +38,24 @@ keys.forEach((button) => {
             }
         }
         if(action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
-            calculator.dataset.previousKeyType = 'operator';
-            calculator.dataset.firstValue = displayedNum;
-            calculator.dataset.operator = action; 
+            if(hasOperator === false) {
+                calculator.dataset.previousKeyType = 'operator';
+                calculator.dataset.firstValue = displayedNum;
+                calculator.dataset.operator = action; 
+                hasOperator = true;
+            }
+            else {
+                console.log(firstValue, secondValue, operator);
+                const result = operate(firstValue, secondValue, operator);
+                content.textContent = result;
+                calculator.dataset.firstValue = result;
+                calculator.dataset.previousKeyType = 'operator';
+                calculator.dataset.operator = action;
+            }
         }
         if(action === 'calculate') {
-            const firstValue = calculator.dataset.firstValue;
-            const secondValue = displayedNum;
-            const operator = calculator.dataset.operator;
-
             content.textContent = operate(firstValue, secondValue, operator);
+            hasOperator = false;
         }
     }
 });
