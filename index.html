@@ -6,44 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" defer></script>
 </head>
 <body>
-    <div class="calculator-body"> 
-        <div id="calculator-display"></div>
+    <div class="calculator"> 
+        <div class="display"></div>
 
-        <div id="display"></div>
+        <div class="calculator-keys"></div>
+            <div class="one-buttons">  
+                <button class="two-width" data-action="clear">AC</button>
+                <button class="one-width">DEL</button>
+                <button class="one-width key--operator" data-action="divide">÷</button>
+            </div> 
 
-        <div class="one-buttons">
-            <button id="ac" class="two-width">AC</button>
-            <button id="del" class="one-width">DEL</button>
-            <button id="divide" class="one-width">÷</button>
-        </div>
+            <div class="two-buttons"> 
+                <button class="one-width">7</button>
+                <button class="one-width">8</button>
+                <button class="one-width">9</button>
+                <button class="one-width key--operator" data-action="subtract">-</button>
+            </div>  
 
-        <div class="two-buttons">
-            <button id="one" class="one-width">1</button>
-            <button id="two" class="one-width">2</button>
-            <button id="three" class="one-width">3</button>
-            <button id="multiply" class="one-width">*</button>
-        </div>
+            <div class="three-buttons">
+                <button class="one-width">4</button>
+                <button class="one-width">5</button>
+                <button class="one-width">6</button>
+                <button class="one-width key--operator" data-action="add">+</button>
+            </div>
 
-        <div class="three-buttons">
-            <button id="four" class="one-width">4</button>
-            <button id="five" class="one-width">5</button>
-            <button id="six" class="one-width">6</button>
-            <button id="plus" class="one-width">+</button>
-        </div>
+            <div class="four-buttons">
+                <button class="one-width">1</button>
+                <button class="one-width">2</button>
+                <button class="one-width">3</button>
+                <button class="one-width key--operator" data-action="multiply">*</button>
+            </div>
 
-        <div class="four-buttons">
-            <button id="seven" class="one-width">7</button>
-            <button id="eight" class="one-width">8</button>
-            <button id="nine" class="one-width">9</button>
-            <button id="subtract" class="one-width">-</button>
-        </div>
-
-        <div class="five-buttons">
-            <button id="dot" class="one-width">.</button>
-            <button id="zero" class="one-width">0</button>
-            <button id="equals" class="two-width">=</button>
+            <div class="five-buttons">
+                <button class="one-width" data-action="decimal">.</button>
+                <button class="one-width">0</button>
+                <button class="two-width key--equal" data-action="calculate">=</button>
+            </div>
         </div>
     </div>
 </body>

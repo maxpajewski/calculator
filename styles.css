@@ -16,8 +16,7 @@ body {
 .calculator-body {
     display: flex;
     flex-direction: column;
-    border: 1px dotted black;
-    margin-top: 64px;
+    margin-top: 10vh;
 }
 
 .one-buttons, .two-buttons, .three-buttons, .four-buttons, .five-buttons  {
@@ -36,7 +35,12 @@ body {
 button {
     border: 1px solid white;
     opacity: 0.8;
+    transition: 0.4s;
     height: 50px;
+}
+
+button:hover {
+    opacity: 1;
 }
 
 .display {
