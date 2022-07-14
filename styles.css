@@ -32,6 +32,10 @@ body {
     width: 100px;
 }
 
+.three-width {
+    width: 150px;
+}
+
 button {
     border: 1px solid white;
     opacity: 0.8;
